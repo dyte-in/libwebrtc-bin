@@ -1,0 +1,20 @@
+diff --git a/pc/rtp_transport.cc b/pc/rtp_transport.cc
+index d4edb9501c..ec7953fc4a 100644
+--- a/pc/rtp_transport.cc
++++ b/pc/rtp_transport.cc
+@@ -11,6 +11,7 @@
+ #include "pc/rtp_transport.h"
+
+ #include <errno.h>
++
+ #include <string>
+ #include <utility>
+
+@@ -192,8 +193,6 @@ void RtpTransport::DemuxPacket(rtc::CopyOnWriteBuffer packet,
+   }
+
+   if (!rtp_demuxer_.OnRtpPacket(parsed_packet)) {
+-    RTC_LOG(LS_WARNING) << "Failed to demux RTP packet: "
+-                        << RtpDemuxer::DescribePacket(parsed_packet);
+   }
+ }
